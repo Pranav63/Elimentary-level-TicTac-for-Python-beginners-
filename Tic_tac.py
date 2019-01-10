@@ -18,3 +18,25 @@ def winning(status):
 		(theBoard.get(13,'') != ' ' and  theBoard.get(13,'') == theBoard.get(23,'') and theBoard.get(13,'') == theBoard.get(33,''))) :
 			print (str(turn)+ " WON THE GAME ")
 			return 1
+		
+		
+turn = 'X'
+move=''
+
+for i in range(9):
+	print_board()		
+	
+	print('Turn for ' + turn + '. Move on which space?')
+	move = input()
+	empty_board[move] = turn
+	
+	won=0
+	won=winning(won)
+	if won==1:
+		#won=0
+		break
+		
+	if turn == 'X':
+		turn = 'O'
+	else:
+		turn = 'X'
